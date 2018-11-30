@@ -19,6 +19,8 @@ CurvaBezier.jar
 java -jar CurvaBezier.jar 
 `````
 
+Para visualizar o código em si, abra a pasta CurvaBezier, e eles estarão dentro da pasta src.
+
 ### Descrição
 
 A curva Bezier baseia os cáculos dos seus coeficientes no Binômio de Newton, que pode ser descrito pela fórmula abaixo:
