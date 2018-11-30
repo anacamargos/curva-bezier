@@ -11,7 +11,7 @@ Esse projeto permite que o usuário desenhe a curva de Bezier. Para isso, o usu�
 * Para a execução do código rode o arquivo clicando duas vezes em cima dele:
 
 `````
-CurvaBezuer.jar
+CurvaBezier.jar
 `````
 * Ou use o comando na pasta em que o arquivo está localizado:
 
