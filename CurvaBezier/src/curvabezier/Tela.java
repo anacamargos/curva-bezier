@@ -278,6 +278,7 @@ public class Tela extends javax.swing.JFrame {
         double incr = 0.0001;
 
         for (double t = 0.0; t <= 1.0; t += incr) {
+            
             x = ((-1 * Math.pow(t, 3) + 3 * Math.pow(t, 2) - 3 * t + 1) * p0.getX()
                     + (3 * Math.pow(t, 3) - 6 * Math.pow(t, 2) + 3 * t + 0) * p1.getX()
                     + (-3 * Math.pow(t, 3) + 3 * Math.pow(t, 2) + 0 * t + 0) * p2.getX()
@@ -288,8 +289,6 @@ public class Tela extends javax.swing.JFrame {
                     + (-3 * Math.pow(t, 3) + 3 * Math.pow(t, 2) + 0 * t + 0) * p2.getY()
                     + (1 * Math.pow(t, 3) + 0 * Math.pow(t, 2) + 0 * t + 0) * p3.getY());
 
-            //drawPoint( (int)x, (int)y );
-            //area.colorePonto((int)x, (int)y);
             buffer.setRGB((int)x, (int)y, Color.RED.getRGB());
         }
     }
