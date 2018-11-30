@@ -55,3 +55,7 @@ for (double t = 0.0; t <= 1.0; t += incr) {
  }
 `````
 
+### Manual do Usuário
+
+Para mais informações de como utilizar a plataforma, leia o Manual do Usuário que está disponível em pdf e também em vídeo neste repositório, nomeados respectivamente por 'Manual do Usuário.pdf'e 'Manual em Vídeo.mov'
+
