@@ -18,3 +18,38 @@ CurvaBezier.jar
 `````
 java -jar CurvaBezier.jar 
 `````
+
+### Descrição
+
+A curva Bezier baseia os cáculos dos seus coeficientes no Binômio de Newton, que pode ser descrito pela fórmula abaixo:
+
+![alt text](https://wikimedia.org/api/rest_v1/media/math/render/svg/0596e1dae2ec55d157c28785267b434742f53ee3)
+
+Na qual temos:
+
+* O valor t é um parametro que percorre toda a curva e se encontra entre os valores de 0 e 1
+* n é o grau do binômio. Entretando, nesse caso como foi implementada a curva de bezier cúbica, então o n é igual a 3
+* É usado n+1 pontos de controle para cada curva que desejamos desenhar, e como nesse caso o n é igual a 3, então temos 4 pontos de controle
+*  Cada um dos pontos de controle (Bi) podem ser escolhidos aleatoriamente pelo usuário
+
+
+Tendo como base todos esses conceitos, foi desenvolvido o método que calcula todos os pontos da curva paramétrica de Bezier, levando em consideração que é necessário a escolha dos 4 pontos de controle antes da chamada do método, como mostrado abaixo:
+
+
+`````
+for (double t = 0.0; t <= 1.0; t += incr) {
+            
+            x = ((-1 * Math.pow(t, 3) + 3 * Math.pow(t, 2) - 3 * t + 1) * p0.getX()
+                    + (3 * Math.pow(t, 3) - 6 * Math.pow(t, 2) + 3 * t + 0) * p1.getX()
+                    + (-3 * Math.pow(t, 3) + 3 * Math.pow(t, 2) + 0 * t + 0) * p2.getX()
+                    + (1 * Math.pow(t, 3) + 0 * Math.pow(t, 2) + 0 * t + 0) * p3.getX());
+
+            y = ((-1 * Math.pow(t, 3) + 3 * Math.pow(t, 2) - 3 * t + 1) * p0.getY()
+                    + (3 * Math.pow(t, 3) - 6 * Math.pow(t, 2) + 3 * t + 0) * p1.getY()
+                    + (-3 * Math.pow(t, 3) + 3 * Math.pow(t, 2) + 0 * t + 0) * p2.getY()
+                    + (1 * Math.pow(t, 3) + 0 * Math.pow(t, 2) + 0 * t + 0) * p3.getY());
+
+            buffer.setRGB((int)x, (int)y, Color.RED.getRGB());
+ }
+`````
+
